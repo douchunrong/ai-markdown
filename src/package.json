@@ -1,0 +1,53 @@
+{
+  "name": "mdai",
+  "productName": "AI Markdown",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AI Markdown 文档整理工具 — Typora 式所见即所得 + AI 智能整理（iOS / Windows / Linux）",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "cross-env MDAI_SHELL=electron vite --configLoader runner",
+    "dev:web": "vite --configLoader runner",
+    "typecheck": "vue-tsc --noEmit",
+    "build:web": "vite build --configLoader runner",
+    "build:desktop": "cross-env MDAI_SHELL=electron vite build --configLoader runner",
+    "build:win": "npm run build:desktop && electron-builder --win nsis",
+    "build:linux": "npm run build:desktop && electron-builder --linux AppImage deb",
+    "build:mac": "npm run build:desktop && electron-builder --mac dmg",
+    "ios:sync": "npm run build:web && cap sync ios",
+    "postinstall": "../scripts/electron-dev-name.sh",
+    "ios:open": "cap open ios",
+    "test": "vitest run --configLoader runner",
+    "test:watch": "vitest --configLoader runner"
+  },
+  "dependencies": {
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/filesystem": "^7.0.0",
+    "@capacitor/preferences": "^7.0.0",
+    "@capacitor/share": "^7.0.0",
+    "@milkdown/kit": "^7.5.0",
+    "@milkdown/vue": "^7.5.0",
+    "docx": "^9.7.1",
+    "dompurify": "^3.2.3",
+    "markdown-it": "^14.1.0",
+    "pinia": "^2.3.0",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/ios": "^7.0.0",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^22.10.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "chokidar": "^4.0.3",
+    "cross-env": "^7.0.3",
+    "electron": "^33.3.0",
+    "electron-builder": "^25.1.8",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.5",
+    "vite-plugin-electron": "^0.29.0",
+    "vitest": "^3.0.0",
+    "vue-tsc": "^2.2.0"
+  }
+}

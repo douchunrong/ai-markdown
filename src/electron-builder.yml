@@ -1,0 +1,26 @@
+appId: com.mdai.editor
+productName: AI Markdown
+copyright: Copyright © 2026 AI Markdown
+directories:
+  output: release
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - package.json
+win:
+  target:
+    - nsis
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  artifactName: ${productName}-${version}-${os}-${arch}.${ext}
+linux:
+  target:
+    - AppImage
+    - deb
+  category: Utility
+  artifactName: ${productName}-${version}-${os}-${arch}.${ext}
+mac:
+  target:
+    - dmg
+  category: public.app-category.productivity

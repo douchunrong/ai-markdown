@@ -1,0 +1,25 @@
+{
+  "$comment": "应用默认配置模板（非敏感项）。启动时若用户配置缺失则以本文件合并默认值；密钥不在此文件，经系统安全存储加密存放。",
+  "version": 1,
+  "ai": {
+    "maxChunkChars": 6000,
+    "retryLimit": 3
+  },
+  "privacy": {
+    "redact": false,
+    "privacyMode": false,
+    "persistAiHistory": true
+  },
+  "editor": {
+    "autosave": true,
+    "autosaveIntervalSec": 30,
+    "backupBeforeAi": true,
+    "backupKeep": 20
+  },
+  "appearance": {
+    "theme": "system",
+    "fontFamily": "",
+    "fontSize": 16,
+    "lineHeight": 1.7
+  }
+}

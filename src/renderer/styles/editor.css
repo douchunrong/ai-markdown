@@ -1,0 +1,68 @@
+/* ============ Milkdown 编辑区排版（对标 Typora 简洁风格） ============ */
+@import '@milkdown/kit/prose/view/style/prosemirror.css';
+@import '@milkdown/kit/prose/gapcursor/style/gapcursor.css';
+@import '@milkdown/kit/prose/tables/style/tables.css';
+
+.editor-pane .milkdown {
+  padding: 40px 24px 30vh;
+  max-width: 860px;
+  margin: 0 auto;
+  font-family: var(--mdai-font);
+  color: var(--mdai-fg);
+  background: transparent;
+}
+
+.editor-pane .milkdown .editor {
+  font-size: var(--mdai-editor-font-size);
+  line-height: var(--mdai-editor-line-height);
+  outline: none;
+}
+
+.editor-pane .milkdown h1,
+.editor-pane .milkdown h2,
+.editor-pane .milkdown h3,
+.editor-pane .milkdown h4 {
+  font-weight: 650;
+  line-height: 1.35;
+  margin: 1.3em 0 0.55em;
+}
+.editor-pane .milkdown h1 { font-size: 1.85em; border-bottom: 1px solid var(--mdai-border); padding-bottom: 0.25em; }
+.editor-pane .milkdown h2 { font-size: 1.45em; border-bottom: 1px solid var(--mdai-border); padding-bottom: 0.2em; }
+.editor-pane .milkdown h3 { font-size: 1.22em; }
+.editor-pane .milkdown p { margin: 0.65em 0; }
+
+.editor-pane .milkdown code {
+  font-family: var(--mdai-mono);
+  font-size: 0.88em;
+  background: var(--mdai-accent-weak);
+  border-radius: 4px;
+  padding: 0.15em 0.35em;
+}
+.editor-pane .milkdown pre {
+  background: var(--mdai-bg-side);
+  border: 1px solid var(--mdai-border);
+  border-radius: 8px;
+  padding: 13px 15px;
+  overflow: auto;
+}
+.editor-pane .milkdown pre code { background: none; padding: 0; font-size: 0.86em; line-height: 1.6; }
+
+.editor-pane .milkdown blockquote {
+  margin: 0.9em 0; padding: 0.15em 1em; border-left: 4px solid var(--mdai-accent);
+  color: var(--mdai-fg-muted); background: var(--mdai-accent-weak); border-radius: 0 6px 6px 0;
+}
+.editor-pane .milkdown ul, .editor-pane .milkdown ol { padding-left: 1.6em; }
+.editor-pane .milkdown li { margin: 0.25em 0; }
+.editor-pane .milkdown li > p { margin: 0.15em 0; }
+
+.editor-pane .milkdown table { border-collapse: collapse; margin: 1em 0; display: block; overflow-x: auto; }
+.editor-pane .milkdown th, .editor-pane .milkdown td { border: 1px solid var(--mdai-border); padding: 6px 12px; }
+.editor-pane .milkdown th { background: var(--mdai-bg-side); }
+
+.editor-pane .milkdown img { max-width: 100%; border-radius: 6px; }
+.editor-pane .milkdown hr { border: none; border-top: 1px solid var(--mdai-border); margin: 1.8em 0; }
+.editor-pane .milkdown a { color: var(--mdai-accent); }
+.editor-pane .milkdown ::selection { background: var(--mdai-accent-weak); }
+
+/* 任务清单 */
+.editor-pane .milkdown li[data-item-type='task'] { list-style: none; }

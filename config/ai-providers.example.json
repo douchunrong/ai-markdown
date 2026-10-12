@@ -1,0 +1,40 @@
+{
+  "$comment": "AI 提供商预设模板：可在应用「设置 → AI 模型 → 导入预设」中一键载入后补充密钥。http 端点仅允许 localhost（隐私模式）。",
+  "providers": [
+    {
+      "name": "OpenAI",
+      "baseUrl": "https://api.openai.com/v1",
+      "model": "gpt-4o-mini",
+      "temperature": 0.3,
+      "timeoutMs": 60000
+    },
+    {
+      "name": "豆包（火山方舟）",
+      "baseUrl": "https://ark.cn-beijing.volces.com/api/v3",
+      "model": "doubao-pro-32k",
+      "temperature": 0.3,
+      "timeoutMs": 60000
+    },
+    {
+      "name": "通义千问（DashScope 兼容模式）",
+      "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "model": "qwen-plus",
+      "temperature": 0.3,
+      "timeoutMs": 60000
+    },
+    {
+      "name": "讯飞星火",
+      "baseUrl": "https://spark-api-open.xf-yun.com/v1",
+      "model": "generalv3.5",
+      "temperature": 0.3,
+      "timeoutMs": 60000
+    },
+    {
+      "name": "本地 Ollama（隐私模式可用）",
+      "baseUrl": "http://localhost:11434/v1",
+      "model": "qwen2.5",
+      "temperature": 0.3,
+      "timeoutMs": 120000
+    }
+  ]
+}
